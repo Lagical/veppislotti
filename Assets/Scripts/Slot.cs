@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     [SerializeField] float startTimeBtwSpawns;
     [SerializeField] GameObject[] Number, Spawner, NumberStatic;
     [SerializeField] Text voitto, rolls;
-    [SerializeField] Button pelaa;
+    [SerializeField] Button pelaa,linkki;
     private GameObject [] delete;
     private int countSpawns, VN, roll = 3;
     private bool start = false, lukuja = false, lukuja1 = false, lukuja2 = false;
@@ -20,6 +20,7 @@ public class Slot : MonoBehaviour
     private void Start()
     {
         timeBtwSpawns = startTimeBtwSpawns;
+        linkki.gameObject.SetActive(false);
     }
 
     public void StartButton()
@@ -162,18 +163,23 @@ public class Slot : MonoBehaviour
                 {
                     case 0:
                         voitto.text = "Onneksi olkoon! Voitit 2% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
+                        linkki.gameObject.SetActive(true);
                         break;
                     case 1:
                         voitto.text = "Onneksi olkoon! Voitit 5% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
+                        linkki.gameObject.SetActive(true);
                         break;
                     case 2:
                         voitto.text = "Onneksi olkoon! Voitit 8% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
+                        linkki.gameObject.SetActive(true);
                         break;
                     case 3:
                         voitto.text = "Onneksi olkoon! Voitit 10% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
+                        linkki.gameObject.SetActive(true);
                         break;
                     case 4:
                         voitto.text = "Onneksi olkoon! Voitit 15% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
+                        linkki.gameObject.SetActive(true);
                         break;
                     case 5:
                         if(roll > 0) {
@@ -181,9 +187,10 @@ public class Slot : MonoBehaviour
                         }
                         else
                         {
-                            voitto.text = "Ei voittoa.";
+                            voitto.text = "Ei voittoa.\nPalaa takaisin etusivulle painamalla tätä tekstiä!";
+                            linkki.gameObject.SetActive(true);
                         }
-                        break;
+                        break;       
                 }
             }
         }

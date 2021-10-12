@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7F94467C-32F1-CA03-5868-931E2CBF06D8}</ProjectGuid>
+    <ProjectGuid>{F300E8FB-5257-AB19-F203-BC5DB6055579}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Slot.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Number.cs" />
+    <Compile Include="Assets\Scripts\Hyperlink.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
