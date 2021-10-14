@@ -94,11 +94,13 @@ public class Slot : MonoBehaviour
         if (timeBtwSpawns <= 0 && start == true)
         {
             int rand = Random.Range(0, Number.Length);
+            int rand1 = Random.Range(0, Number.Length);
+            int rand2 = Random.Range(0, Number.Length);
             if (countSpawns < 30)
             {
                 Instantiate(Number[rand], new Vector3(-5.5f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand], new Vector3(-0.4f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand], new Vector3(5f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand1], new Vector3(-0.4f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand2], new Vector3(5f, 4f, 0f), Quaternion.identity);
                 timeBtwSpawns = startTimeBtwSpawns;
                 countSpawns++;
             }
@@ -117,7 +119,7 @@ public class Slot : MonoBehaviour
                     lukuja = false;
                 }
                 Instantiate(Number[rand], new Vector3(-0.4f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand], new Vector3(5f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand1], new Vector3(5f, 4f, 0f), Quaternion.identity);
                 timeBtwSpawns = startTimeBtwSpawns;
                 countSpawns++;
             }
