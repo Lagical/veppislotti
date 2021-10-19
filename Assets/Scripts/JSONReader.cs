@@ -11,22 +11,6 @@ public class JSONReader : MonoBehaviour
     {
         public string koodi;
     }
-    public class Codes1
-    {
-        public string koodi;
-    }
-    public class Codes2
-    {
-        public string koodi;
-    }
-    public class Codes3
-    {
-        public string koodi;
-    }
-    public class Codes4
-    {
-        public string koodi;
-    }
 
     [System.Serializable]
     public class allCodes
@@ -38,7 +22,7 @@ public class JSONReader : MonoBehaviour
         public Codes[] koodi15;
     }
 
-    public allCodes allCodesList = new allCodes();
+        public allCodes allCodesList = new allCodes();
     void Start()
     {
         allCodesList = JsonUtility.FromJson<allCodes>(textJSON.text);

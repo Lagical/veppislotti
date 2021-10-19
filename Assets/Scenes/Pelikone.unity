@@ -1241,6 +1241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554347341}
   - component: {fileID: 1554347340}
+  - component: {fileID: 1554347342}
   m_Layer: 0
   m_Name: JSON
   m_TagString: Untagged
@@ -1262,7 +1263,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textJSON: {fileID: 4900000, guid: 07efb4721c0eb8e4e88a2034a30909b3, type: 3}
   allCodesList:
-    koodi: []
+    koodi2: []
+    koodi5: []
+    koodi8: []
+    koodi10: []
+    koodi15: []
 --- !u!4 &1554347341
 Transform:
   m_ObjectHideFlags: 0
@@ -1277,6 +1282,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554347342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554347339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a5cfaa7c101b243a2fbd2ba79f03b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonURL: https://veppiprojektit.fi/powerpointpelit/Unity/SLOTTI/JSON.txt
 --- !u!1 &1571039956
 GameObject:
   m_ObjectHideFlags: 0
