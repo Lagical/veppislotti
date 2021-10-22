@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class jsonController : MonoBehaviour
 {
-
+    /*
     public string jsonURL;
     private string[] koodit;
 
@@ -13,6 +13,7 @@ public class jsonController : MonoBehaviour
         StartCoroutine(getData());
 
     }
+
 
     IEnumerator getData()
     {
@@ -38,5 +39,5 @@ public class jsonController : MonoBehaviour
         }
         koodit = testiLista.ToArray();
         Debug.Log(koodit[2]);
-    }
+    }*/
 }

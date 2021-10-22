@@ -56,10 +56,10 @@
     <Compile Include="Assets\Scripts\Slot.cs" />
     <Compile Include="Assets\Scripts\JSONReader.cs" />
     <Compile Include="Assets\Scripts\Hyperlink.cs" />
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts\Number.cs" />
     <Compile Include="Assets\Scripts\jsonController.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\jsonDataClass.cs" />
+    <Compile Include="Assets\Scripts\Number.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\JSON.txt" />
