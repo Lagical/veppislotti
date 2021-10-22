@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\jsonDataClass.cs" />
     <Compile Include="Assets\Scripts\Number.cs" />
+    <Compile Include="Assets\Scripts\fireBaseJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\JSON.txt" />
