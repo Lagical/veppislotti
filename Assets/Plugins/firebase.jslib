@@ -16,5 +16,5 @@ mergeInto(LibraryManager.library, {
         unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, "There was an error: " + error.message);
     }
     }
-    
+
 });
