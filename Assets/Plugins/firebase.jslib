@@ -5,7 +5,7 @@ mergeInto(LibraryManager.library, {
     }
 
 
-    /*GetJSON: function(path, objectName, callback, fallback) {
+    GetJSON: function(path, objectName, callback, fallback) {
         var parsedPath = Pointer_stringify(path);
         var parsedObjectName = Pointer_stringify(objectName);
         var parsedCallback = Pointer_stringify(callback);
@@ -19,6 +19,6 @@ mergeInto(LibraryManager.library, {
         } catch (error) {
             window.unityInstance.sendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
-    }*/
+    }
 
 });
