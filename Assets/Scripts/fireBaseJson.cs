@@ -12,9 +12,13 @@ public class fireBaseJson : MonoBehaviour
     [DllImport("__Internal")]
     public static extern void GetJSON(string path, string objectName, string callback, string fallback);
 
+    [DllImport("__Internal")]
+    private static extern void Hello();
+
     private void Start()
     {
-        GetJSON("example", gameObject.name, "OnRequestSuccess", "OnRequestFailed");
+        Hello();
+        //GetJSON("example", gameObject.name, "OnRequestSuccess", "OnRequestFailed");
     }
 
     private void OnRequestSuccess(string data)
