@@ -1,24 +1,7 @@
 mergeInto(LibraryManager.library, {
-
-    Hello: function () {
-    window.alert("Hello, world!");
+     getAle: function(alennus){
+        var stringAle = UTF8ToString(alennus)
+        console.log(stringAle);
+        setAleInJs(stringAle);
     }
-
-
-    GetJSON: function(path, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
-
-        try {
-            firebase.database().ref(parsedPath).once('value').then(function(snapshot) {
-                window.unityInstance.sendMessage(parsedObjectName, parsedCallback, JSON.stringify(snapshot.val()));
-            });
-
-        } catch (error) {
-            window.unityInstance.sendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    }
-
 });

@@ -10,6 +10,7 @@ public class Slot : MonoBehaviour
     [SerializeField] GameObject[] Number, Spawner, NumberStatic;
     [SerializeField] Text voitto, rolls;
     [SerializeField] Button pelaa,linkki;
+    [SerializeField] fireBaseJson fbj;
     private GameObject [] delete;
     private int countSpawns, VN, roll = 3;
     private bool start = false, lukuja = false, lukuja1 = false, lukuja2 = false;
@@ -166,22 +167,27 @@ public class Slot : MonoBehaviour
                     case 0:
                         voitto.text = "Onneksi olkoon! Voitit 2% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        fbj.getAlennus(2);
                         break;
                     case 1:
                         voitto.text = "Onneksi olkoon! Voitit 5% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        fbj.getAlennus(5);
                         break;
                     case 2:
                         voitto.text = "Onneksi olkoon! Voitit 8% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        fbj.getAlennus(8);
                         break;
                     case 3:
                         voitto.text = "Onneksi olkoon! Voitit 10% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        fbj.getAlennus(10);
                         break;
                     case 4:
                         voitto.text = "Onneksi olkoon! Voitit 15% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        fbj.getAlennus(15);
                         break;
                     case 5:
                         if(roll > 0) {
