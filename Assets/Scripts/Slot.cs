@@ -7,8 +7,9 @@ public class Slot : MonoBehaviour
 {
     private float timeBtwSpawns;
     [SerializeField] float startTimeBtwSpawns;
-    [SerializeField] GameObject[] Number, Spawner, NumberStatic;
+    [SerializeField] GameObject[] Number, NumberStatic;
     [SerializeField] Text voitto, rolls;
+    [SerializeField] Image tekstit;
     [SerializeField] Button pelaa,linkki;
     [SerializeField] fireBaseJson fbj;
     private GameObject [] delete;
@@ -34,7 +35,8 @@ public class Slot : MonoBehaviour
         pelaa.interactable = false;
         roll -= 1;
         countSpawns = 0;
-        voitto.gameObject.SetActive(false);
+        tekstit.gameObject.SetActive(false);
+        rolls.gameObject.SetActive(false);
         delete = GameObject.FindGameObjectsWithTag("NumberStatic");
         foreach (GameObject item in delete)
         {
@@ -43,13 +45,13 @@ public class Slot : MonoBehaviour
         switch (roll)
         {
             case 2:
-                rolls.text = "Pyöräytyksiä: 2";
+                rolls.text = "PYÖRÄYTYKSIÄ: 2";
                 break;
             case 1:
-                rolls.text = "Pyöräytyksiä: 1";
+                rolls.text = "PYÖRÄYTYKSIÄ: 1";
                 break;
             case 0:
-                rolls.text = "Pyöräytyksiä: 0";
+                rolls.text = "PYÖRÄYTYKSIÄ: 0";
                 break;
         }
     }
@@ -99,15 +101,14 @@ public class Slot : MonoBehaviour
             int rand2 = Random.Range(0, Number.Length);
             if (countSpawns < 30)
             {
-                Instantiate(Number[rand], new Vector3(-5.5f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand1], new Vector3(-0.4f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand2], new Vector3(5f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand], new Vector3(-5.5f, 5.3f, 0f), Quaternion.identity);
+                Instantiate(Number[rand1], new Vector3(0.0f, 5.3f, 0f), Quaternion.identity);
+                Instantiate(Number[rand2], new Vector3(5.5f, 5.3f, 0f), Quaternion.identity);
                 timeBtwSpawns = startTimeBtwSpawns;
                 countSpawns++;
             }
-            else if (countSpawns >= 30 && countSpawns < 35)
+            else if (countSpawns >= 30 && countSpawns < 45)
             {
-                Spawner[0].SetActive(false);
                 if(VN == 5 && lukuja == true)
                 {
                     int r = Random.Range(0, NumberStatic.Length);
@@ -119,26 +120,25 @@ public class Slot : MonoBehaviour
                     Instantiate(NumberStatic[VN], new Vector3(-5.5f, 0.8f, 0f), Quaternion.identity);
                     lukuja = false;
                 }
-                Instantiate(Number[rand], new Vector3(-0.4f, 4f, 0f), Quaternion.identity);
-                Instantiate(Number[rand1], new Vector3(5f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand], new Vector3(0f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand1], new Vector3(5.5f, 4f, 0f), Quaternion.identity);
                 timeBtwSpawns = startTimeBtwSpawns;
                 countSpawns++;
             }
-            else if (countSpawns >= 35 && countSpawns < 40)
+            else if (countSpawns >= 45 && countSpawns < 60)
             {
-                Spawner[1].SetActive(false);
                 if (VN == 5 && lukuja1 == true)
                 {
                     int r = Random.Range(3, 4);
-                    Instantiate(NumberStatic[r], new Vector3(-0.4f, 0.8f, 0f), Quaternion.identity);
+                    Instantiate(NumberStatic[r], new Vector3(0f, 0.8f, 0f), Quaternion.identity);
                     lukuja1 = false;
                 }
                 else if(lukuja1 == true)
                 {
-                    Instantiate(NumberStatic[VN], new Vector3(-0.4f, 0.8f, 0f), Quaternion.identity);
+                    Instantiate(NumberStatic[VN], new Vector3(0f, 0.8f, 0f), Quaternion.identity);
                     lukuja1 = false;
                 }
-                Instantiate(Number[rand], new Vector3(5f, 4f, 0f), Quaternion.identity);
+                Instantiate(Number[rand], new Vector3(5.5f, 4f, 0f), Quaternion.identity);
                 timeBtwSpawns = startTimeBtwSpawns;
                 countSpawns++;
             }
@@ -147,58 +147,69 @@ public class Slot : MonoBehaviour
                 if (VN == 5 && lukuja2 == true)
                 {
                     int r = Random.Range(0, 2);
-                    Instantiate(NumberStatic[r], new Vector3(5, 0.8f, 0f), Quaternion.identity);                  
+                    Instantiate(NumberStatic[r], new Vector3(5.5f, 0.8f, 0f), Quaternion.identity);                  
                     lukuja2 = false;
                 }
                 else if (lukuja2 == true)
                 {
-                    Instantiate(NumberStatic[VN], new Vector3(5f, 0.8f, 0f), Quaternion.identity);
+                    Instantiate(NumberStatic[VN], new Vector3(5.5f, 0.8f, 0f), Quaternion.identity);
                     lukuja2 = false;
                 }
-                Spawner[2].SetActive(false);
                 start = false;
                 if(roll > 0)
                 {
                     pelaa.interactable = true;
                 }
-                voitto.gameObject.SetActive(true);
+                tekstit.gameObject.SetActive(true);
+                rolls.gameObject.SetActive(true);
                 switch (VN)
                 {
                     case 0:
                         voitto.text = "Onneksi olkoon! Voitit 2% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        rolls.gameObject.GetComponent<Animator>().enabled = false;
+                        rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         fbj.getAlennus(2);
                         break;
                     case 1:
                         voitto.text = "Onneksi olkoon! Voitit 5% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        rolls.gameObject.GetComponent<Animator>().enabled = false;
+                        rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         fbj.getAlennus(5);
                         break;
                     case 2:
                         voitto.text = "Onneksi olkoon! Voitit 8% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        rolls.gameObject.GetComponent<Animator>().enabled = false;
+                        rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         fbj.getAlennus(8);
                         break;
                     case 3:
                         voitto.text = "Onneksi olkoon! Voitit 10% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
+                        rolls.gameObject.GetComponent<Animator>().enabled = false;
+                        rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         fbj.getAlennus(10);
                         break;
                     case 4:
                         voitto.text = "Onneksi olkoon! Voitit 15% alennuksen!\nLunasta voittosi painamalla tätä tekstiä!";
                         linkki.gameObject.SetActive(true);
-                        fbj.getAlennus(15);
+                        rolls.gameObject.GetComponent<Animator>().enabled = false;
+                        rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         break;
                     case 5:
                         if(roll > 0) {
-                            voitto.text = "Ei voittoa. Pelaa uudestaan!";
+                            voitto.text = "Ei voittoa. Pyöräytä uudestaan!";
                         }
                         else
                         {
                             voitto.text = "Ei voittoa.\nPalaa takaisin etusivulle painamalla tätä tekstiä!";
                             linkki.gameObject.SetActive(true);
+                            rolls.gameObject.GetComponent<Animator>().enabled = false;
+                            rolls.gameObject.GetComponent<Text>().color = new Color(1, 1, 1, 0.5f);
                         }
-                        break;       
+                        break;
                 }
             }
         }

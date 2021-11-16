@@ -11,7 +11,6 @@ public class fireBaseJson : MonoBehaviour
 
     public void getAlennus(int ale)
     {
-        Debug.Log(ale);
         getAle(ale.ToString());
     }
 
